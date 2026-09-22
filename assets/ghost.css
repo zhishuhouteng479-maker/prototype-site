@@ -1,0 +1,81 @@
+/* ==========================================
+   Ghost Mascot - カスタムスタイル
+   ========================================== */
+
+/* --- A: 吹き出し型 --- */
+.ghost-bubble {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.ghost-bubble img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px rgba(0, 188, 212, 0.5));
+}
+
+.ghost-bubble-text {
+  position: relative;
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+  border: 2px solid #00bcd4;
+  border-radius: 16px;
+  border-top-left-radius: 4px;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #00363a;
+  box-shadow: 0 2px 12px rgba(0, 188, 212, 0.15);
+  flex: 1;
+}
+
+.ghost-bubble-text::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 12px;
+  border: 6px solid transparent;
+  border-right-color: #00bcd4;
+}
+
+.ghost-bubble-text::after {
+  content: '';
+  position: absolute;
+  left: -9px;
+  top: 13px;
+  border: 5px solid transparent;
+  border-right-color: #e0f7fa;
+}
+
+.ghost-bubble-label {
+  font-weight: 700;
+  color: #00838f;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+/* --- B: カスタムAdmonition型 --- */
+.md-typeset .admonition.ghost,
+.md-typeset details.ghost {
+  border-color: #00bcd4;
+}
+
+.md-typeset .ghost > .admonition-title,
+.md-typeset .ghost > summary {
+  background-color: rgba(0, 188, 212, 0.12);
+  border-color: #00bcd4;
+}
+
+.md-typeset .ghost > .admonition-title::before,
+.md-typeset .ghost > summary::before {
+  background-image: url('ghost_mascot.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+}
